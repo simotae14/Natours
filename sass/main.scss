@@ -1,120 +1,141 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-dark: #777;
+$color-white: #fff;
 /* RESET STYLE */
-/* line 8, sass/main.scss */
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /* ROOT ELEMENT FONT SIZE */
-/* line 17, sass/main.scss */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 /* FONT STYLE default */
-/* line 22, sass/main.scss */
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   /*font-size: 16px;*/
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* HEADER */
-/* line 33, sass/main.scss */
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url('../img/hero.jpg');
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
+  position: relative;
+}
 
 /* LOGO */
-/* line 47, sass/main.scss */
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
-/* line 53, sass/main.scss */
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 /* TEXT BOX */
-/* line 58, sass/main.scss */
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 /* HEADING */
-/* line 67, sass/main.scss */
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   /* to avoid the shacking on the animation */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+}
 
-/* line 75, sass/main.scss */
 .heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
+
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
   /*
     animation-delay: 3s;
     animation-iteration-count: 3;
-  */ }
+  */
+}
 
-/* line 90, sass/main.scss */
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out; }
+  animation: moveInRight 1s ease-out;
+}
 
 /* ANIMATIONS */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
+    transform: translateX(-10rem);
+  }
+  80%{
+    transform: translateX(1rem);
+  }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
+    transform: translateX(10rem);
+  }
+  80%{
+    transform: translateX(-1rem);
+  }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveIn {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
   100% {
     opacity: 1;
-    transform: translateY(0); } }
+    transform: translateY(0);
+  }
+}
 
 /* BUTTONS */
-/* line 139, sass/main.scss */
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -124,24 +145,24 @@ body {
   border-radius: 10rem;
   transition: all .2s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+}
 
-/* line 151, sass/main.scss */
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
 
-/* line 156, sass/main.scss */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
 
-/* line 161, sass/main.scss */
 .btn--white {
-  background-color: #fff;
-  color: #777; }
+  background-color: $color-white;
+  color: $color-grey-dark;
+}
 
-/* line 166, sass/main.scss */
 .btn::after {
   content: "";
   display: inline-block;
@@ -152,18 +173,19 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s; }
+  transition: all .4s;
+}
 
-/* line 179, sass/main.scss */
 .btn--white::after {
-  background-color: #fff; }
+  background-color: $color-white;
+}
 
-/* line 183, sass/main.scss */
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
-/* line 188, sass/main.scss */
 .btn--animated {
   animation: moveIn .5s ease-out .75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}

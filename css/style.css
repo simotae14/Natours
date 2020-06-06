@@ -1,5 +1,5 @@
 /* RESET STYLE */
-/* line 9, sass/main.scss */
+/* line 2, sass/base/_base.scss */
 *,
 *::after,
 *::before {
@@ -8,12 +8,12 @@
   box-sizing: inherit; }
 
 /* ROOT ELEMENT FONT SIZE */
-/* line 18, sass/main.scss */
+/* line 11, sass/base/_base.scss */
 html {
   font-size: 62.5%; }
 
 /* FONT STYLE default */
-/* line 23, sass/main.scss */
+/* line 16, sass/base/_base.scss */
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -22,62 +22,6 @@ body {
   color: #777;
   padding: 3rem;
   box-sizing: border-box; }
-
-/* HEADER */
-/* line 34, sass/main.scss */
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
-  /* LOGO */
-  /* TEXT BOX */ }
-  /* line 47, sass/main.scss */
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  /* line 53, sass/main.scss */
-  .header__logo {
-    height: 3.5rem; }
-  /* line 58, sass/main.scss */
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-/* HEADING */
-/* line 68, sass/main.scss */
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* to avoid the shacking on the animation */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  /* line 74, sass/main.scss */
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /*
-      animation-delay: 3s;
-      animation-iteration-count: 3;
-    */ }
-  /* line 88, sass/main.scss */
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
 
 /* ANIMATIONS */
 @keyframes moveInLeft {
@@ -108,8 +52,37 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
+/* HEADING */
+/* line 2, sass/base/_typography.scss */
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* to avoid the shacking on the animation */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  /* line 8, sass/base/_typography.scss */
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*
+      animation-delay: 3s;
+      animation-iteration-count: 3;
+    */ }
+  /* line 22, sass/base/_typography.scss */
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+
 /* BUTTONS */
-/* line 143, sass/main.scss */
+/* line 3, sass/components/_btn.scss */
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -120,29 +93,29 @@ body {
   position: relative;
   font-size: 1.6rem; }
 
-/* line 154, sass/main.scss */
+/* line 14, sass/components/_btn.scss */
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  /* line 157, sass/main.scss */
+  /* line 17, sass/components/_btn.scss */
   .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-/* line 162, sass/main.scss */
+/* line 22, sass/components/_btn.scss */
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-/* line 166, sass/main.scss */
+/* line 26, sass/components/_btn.scss */
 .btn--white {
   background-color: #fff;
   color: #777; }
-  /* line 169, sass/main.scss */
+  /* line 29, sass/components/_btn.scss */
   .btn--white::after {
     background-color: #fff; }
 
-/* line 173, sass/main.scss */
+/* line 33, sass/components/_btn.scss */
 .btn::after {
   content: "";
   display: inline-block;
@@ -155,7 +128,34 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-/* line 185, sass/main.scss */
+/* line 45, sass/components/_btn.scss */
 .btn--animated {
   animation: moveIn .5s ease-out .75s;
   animation-fill-mode: backwards; }
+
+/* HEADER */
+/* line 2, sass/layout/_header.scss */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  /* LOGO */
+  /* TEXT BOX */ }
+  /* line 15, sass/layout/_header.scss */
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  /* line 21, sass/layout/_header.scss */
+  .header__logo {
+    height: 3.5rem; }
+  /* line 26, sass/layout/_header.scss */
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }

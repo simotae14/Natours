@@ -1,0 +1,19 @@
+/* RESET STYLE */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* ROOT ELEMENT FONT SIZE */
+html {
+  // defines value REM
+  font-size: 62.5%;
+}
+
+/* FONT STYLE default */
+body {
+  box-sizing: border-box;
+}

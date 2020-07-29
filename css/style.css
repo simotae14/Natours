@@ -1,5 +1,4 @@
 /* RESET STYLE */
-/* line 2, sass/base/_base.scss */
 *,
 *::after,
 *::before {
@@ -8,19 +7,11 @@
   box-sizing: inherit; }
 
 /* ROOT ELEMENT FONT SIZE */
-/* line 11, sass/base/_base.scss */
 html {
   font-size: 62.5%; }
 
 /* FONT STYLE default */
-/* line 16, sass/base/_base.scss */
 body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  /*font-size: 16px;*/
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
 
 /* ANIMATIONS */
@@ -52,15 +43,21 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
 /* HEADING */
-/* line 2, sass/base/_typography.scss */
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   /* to avoid the shacking on the animation */
   backface-visibility: hidden;
   margin-bottom: 6rem; }
-  /* line 8, sass/base/_typography.scss */
   .heading-primary--main {
     display: block;
     font-size: 6rem;
@@ -73,7 +70,6 @@ body {
       animation-delay: 3s;
       animation-iteration-count: 3;
     */ }
-  /* line 22, sass/base/_typography.scss */
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -82,7 +78,6 @@ body {
     animation: moveInRight 1s ease-out; }
 
 /* BUTTONS */
-/* line 3, sass/components/_btn.scss */
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -93,29 +88,23 @@ body {
   position: relative;
   font-size: 1.6rem; }
 
-/* line 14, sass/components/_btn.scss */
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  /* line 17, sass/components/_btn.scss */
   .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-/* line 22, sass/components/_btn.scss */
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-/* line 26, sass/components/_btn.scss */
 .btn--white {
   background-color: #fff;
   color: #777; }
-  /* line 29, sass/components/_btn.scss */
   .btn--white::after {
     background-color: #fff; }
 
-/* line 33, sass/components/_btn.scss */
 .btn::after {
   content: "";
   display: inline-block;
@@ -128,13 +117,11 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-/* line 45, sass/components/_btn.scss */
 .btn--animated {
   animation: moveIn .5s ease-out .75s;
   animation-fill-mode: backwards; }
 
 /* HEADER */
-/* line 2, sass/layout/_header.scss */
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
@@ -144,18 +131,43 @@ body {
   position: relative;
   /* LOGO */
   /* TEXT BOX */ }
-  /* line 15, sass/layout/_header.scss */
   .header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem; }
-  /* line 21, sass/layout/_header.scss */
   .header__logo {
     height: 3.5rem; }
-  /* line 26, sass/layout/_header.scss */
   .header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(((100% - 2 * 6rem) / 3) * 2 + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(((100% - 3 * 6rem) / 4) * 2 + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(((100% - 3 * 6rem) / 4) * 3 + 6rem * 2); }

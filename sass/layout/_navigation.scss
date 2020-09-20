@@ -57,7 +57,7 @@
   &__link {
     &:link,
     &:visited {
-      display: inline-block;
+      display: none;
       font-size: 3rem;
       font-weight: 300;
       padding: 1rem 2rem;
@@ -83,10 +83,12 @@
   &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
-
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+  }
+  &__checkbox:checked ~ &__nav &__link {
+    display: inline-block;
   }
   // ICON
   &__icon {

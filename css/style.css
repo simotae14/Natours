@@ -606,7 +606,7 @@ body {
   margin: 1rem; }
 
 .navigation__link:link, .navigation__link:visited {
-  display: inline-block;
+  display: none;
   font-size: 3rem;
   font-weight: 300;
   padding: 1rem 2rem;
@@ -631,6 +631,9 @@ body {
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
   width: 100%; }
+
+.navigation__checkbox:checked ~ .navigation__nav .navigation__link {
+  display: inline-block; }
 
 .navigation__icon {
   position: relative;

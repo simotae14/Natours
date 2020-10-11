@@ -1,3 +1,9 @@
+/*
+0 - 600px:          PHONES
+600px - 900px:      TABLET PORTRAIT
+900px - 1200px:     TABLET LANDSCAPE
+1800px e su:        BIG DESKTOPS
+*/
 /* RESET STYLE */
 *,
 *::after,
@@ -9,6 +15,9 @@
 /* ROOT ELEMENT FONT SIZE */
 html {
   font-size: 62.5%; }
+  @media (max-width: 600px) {
+    html {
+      font-size: 50%; } }
 
 /* FONT STYLE default */
 body {

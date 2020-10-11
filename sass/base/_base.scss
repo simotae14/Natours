@@ -11,6 +11,9 @@
 html {
   // defines value REM
   font-size: 62.5%;
+  @include respond-phone {
+    font-size: 50%;
+  }
 }
 
 /* FONT STYLE default */

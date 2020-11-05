@@ -439,6 +439,14 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skew(-12deg); }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .story {
+      transform: skew(0); } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -449,13 +457,19 @@ body {
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skew(12deg);
     position: relative; }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skew(0); } }
   .story__img {
     height: 100%;
-    transform: translateX(-4rem) scale(1.4);
+    transform: translateX(-4rem) scale(1);
     backface-visibility: hidden;
-    transition: all .5s; }
+    transition: all 0.5s; }
   .story__text {
     transform: skew(12deg); }
+    @media (max-width: 37.5em) {
+      .story__text {
+        transform: skew(0); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -466,7 +480,7 @@ body {
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
-    transition: all .5s;
+    transition: all 0.5s;
     backface-visibility: hidden; }
   .story:hover .story__caption {
     opacity: 1;
